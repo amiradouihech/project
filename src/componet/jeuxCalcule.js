@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 // Convertit un nombre en une chaîne de barres verticales
 const numberToBars = (num) => {
-  return '| '.repeat(num).trim(); // Crée une chaîne avec `num` barres séparées par des espaces
+  return num > 0 ? '| '.repeat(num).trim() : ''; // Assure que num est positif
 };
 
 // Génère une question de calcul aléatoire
@@ -32,7 +32,7 @@ const generateOptions = (correctAnswer) => {
   
   while (options.size < 4) {
     const randomOption = Math.floor(Math.random() * 20) - 10;
-    if (randomOption > 0) { // Éviter les nombres négatifs et zéro
+    if (randomOption > 0 && randomOption !== correctAnswer) { // Éviter les doublons et zéro
       options.add(randomOption);
     }
   }
