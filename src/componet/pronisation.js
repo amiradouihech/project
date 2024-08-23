@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-
+import {useContext} from 'react'
+import { NavContext } from "./navbar/router";
 const pronunciations = {
   French: {
     a: 'ah',
@@ -66,7 +67,8 @@ function Pre() {
   const [letter, setLetter] = useState('');
   const [pronunciation, setPronunciation] = useState('');
   const [feedback, setFeedback] = useState('');
-
+  const {setShowNav} = useContext(NavContext);
+  setShowNav(true)
   const generateRandomLetter = () => {
     const letters = Object.keys(pronunciations[language]);
     const randomLetter = letters[Math.floor(Math.random() * letters.length)];

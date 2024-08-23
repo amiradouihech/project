@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 
+
+
+import {useContext} from 'react'
+import { NavContext } from "./navbar/router";
 // Convertit un nombre en une chaîne d'images de pommes
 const numberToApples = (num) => {
   const appleArray = [];
@@ -56,7 +60,8 @@ function MathGame() {
   const [score, setScore] = useState(0);
   const [attempts, setAttempts] = useState(0);
   const [gameOver, setGameOver] = useState(false);
-
+  const {setShowNav} = useContext(NavContext);
+  setShowNav(true)
   const handleAnswerClick = (answer) => {
     if (!gameOver) {
       if (answer === questionData.answer) {

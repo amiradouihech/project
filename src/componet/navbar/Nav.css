@@ -1,0 +1,67 @@
+.container-nav{
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.navbar {
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: transparent; 
+    width: 100vw;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-item {
+    margin: 0 20px; 
+    margin-right: 110px;
+    text-decoration: none;
+    color: rgb(12, 12, 12);
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .logo {
+    margin-right: 20px;
+  }
+  
+  .logo-img {
+    height: 40px; /* Ajustez la taille selon vos besoins */
+    cursor: pointer;
+  }  
+  
+  .nav-buttons {
+    display: flex;
+  }
+  
+  .nav-button {
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-left: 10px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .register-button {
+    background-color: #ffcc23;
+  }
+  
+  .login-button {
+    background-color: #fff020;
+  }
+  
+  .nav-button p {
+    font-weight: bold;
+    color: white;
+  }
+  

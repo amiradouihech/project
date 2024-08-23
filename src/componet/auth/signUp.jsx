@@ -3,7 +3,13 @@ import React, { useState } from "react";
 import { auth } from "../../firebase";
 import "./signUp.css"; // Import a CSS file for styling
 
+import {useContext} from 'react'
+import { NavContext } from "../navbar/router";
 const SignUp = () => {
+  
+  const {setShowNav} = useContext(NavContext);
+  setShowNav(false)
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [nom, setNom] = useState("");

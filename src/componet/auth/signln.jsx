@@ -3,9 +3,15 @@ import React, { useState } from "react";
 import { auth } from "../../firebase";
 import "./Signin.css"; // Import a CSS file for styling
 
+import {useContext} from 'react'
+import { NavContext } from "../navbar/router";
+
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const {setShowNav} = useContext(NavContext);
+  setShowNav(false)
 
   const signIn = (e) => {
     e.preventDefault();

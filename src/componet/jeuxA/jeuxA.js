@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
-
+import {useContext} from 'react'
+import { NavContext } from "../navbar/router";
 function JeuxA() {
+  
+  const {setShowNav} = useContext(NavContext);
+  setShowNav(true)
+
   const [sentence, setSentence] = useState("");
   const [scrambledWords, setScrambledWords] = useState([]);
   const [userOrder, setUserOrder] = useState([]);

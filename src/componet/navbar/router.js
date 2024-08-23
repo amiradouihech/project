@@ -1,4 +1,4 @@
-import React from 'react'
+import {useState, createContext} from 'react'
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
 import JeuxA from '../jeuxA/jeuxA'
 import MathGame from '../jeuxCalcule';
@@ -6,10 +6,18 @@ import Pre from '../pronisation';
 import SignIn from '../auth/signln';
 import SignUp from '../auth/signUp';
 import AuthDetails from '../AuthDetails';
+
+import {Navbar} from './Navbar'
+
+export const NavContext = createContext();
+
 function Rout() {
+  const [showNav, setShowNav] =useState(true);
+
   return (
-    <div>
+    <NavContext.Provider value={{setShowNav}}>
       <Router>
+      {showNav && <Navbar />}
         <Routes>
             <Route path="/jeuxMot" element={<JeuxA/>}/>
             <Route path="/jCP" element={<MathGame/>}/>
@@ -19,7 +27,7 @@ function Rout() {
             <Route path="/AuthD" element={<AuthDetails/>}/>
         </Routes>
       </Router>
-    </div>
+      </NavContext.Provider>
   )
 }
 
